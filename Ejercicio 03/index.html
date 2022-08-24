@@ -18,10 +18,13 @@
 
         <style>
             .avatar{
-                width: 75px;
-                height: 75px;
+                width: 5px;
+                height: 5px;
             }
-
+            
+            .puntero{
+                cursor: pointer;
+            }
         </style>
         
     </head>    
@@ -83,13 +86,13 @@
             <table class="table table-striped">
                 <tr>
                     <th>Avatar</th>
-                    <th>Nombre</th>
-                    <th>Sexo</th>
+                    <th><a class="puntero" ng-click="columna ='nombre'; reverse = !reverse;">Nombre</a></th>
+                    <th><a class="puntero" ng-click="columna = 'sexo'; reverse = !reverse;">Sexo</a></th>
                     <th>Telefono</th>
                     <th>Celular</th>
                 </tr>
 
-                <tr ng-repeat="persona in personas | filter:busqueda">
+                <tr ng-repeat="persona in personas | filter:busqueda | orderBy:columna:reverse">
                     <td><img ng-src="img/{{persona.avatar}}"  class="rounded-circle" alt="img"></td>
                     <td>{{persona.nombre}}</td>
                     <td>{{persona.sexo}}</td>
