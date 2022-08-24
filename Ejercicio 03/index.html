@@ -69,6 +69,8 @@
             <br>
             <br>
             <hr>
+
+            <!--OrderBy en filtros y ng-repeat-->
             <div class="row">
                 Busqueda:
                 <br>
@@ -101,7 +103,22 @@
                 </tr>
             </table>
 
+            <!-- Repeticiones para elementos ng-options -->
+            <br>
+            <br>
+            <hr>
+            <br>
+                Seleccion del Pais: {{paisSeleccionado}}
+                <select ng-model="paisSeleccionado" class="form-control">
+                    <option value="">Seleccione</option>
+                    <option ng-repeat="pais in paises" value="{{pais.id}}">{{pais.nombre}}</option>
+                </select>
 
+                <br>
+                Seleccion del pais:
+                <select ng-model="paisSeleccionado" class="form-control" ng-options="pais.id as pais.nombre for pais in paises">
+                    <option value="">Seleccione</option>
+                </select> 
         </div><!-- fin del listadoCtrl -->
 
     </body>
