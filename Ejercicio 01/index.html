@@ -12,7 +12,28 @@
 </head>
 <body>
     <div class="container">
-        <h1>{{ "Hola Mundo desde AngularJS" }}</h1>
+        <h1>Filtros :: Filters</h1>
+        <h1>en Angular</h1>
+        <p>
+            Filtro de texto:: {{"Fran"}}
+            <br>
+            Filtro de texto May:: {{"Fran" | uppercase}}
+            <br>
+            Filtro de texto Min:: {{"Fran" | lowercase}}
+        </p>
+
+        <p>
+            Filtro de moneda: {{ 1350 }}
+            <br>
+            Filtro de moneda: {{ 1350 | currency}}
+            <br>
+            Filtro de moneda: {{ 1350 | currency:'€'}}
+        </p>
+        <p>
+            Filtro de numero: {{ 135000000 }}
+            <br>
+            Filtro de numero: {{ 135000000 | number}}
+        </p>
     </div>
 </body>
 </html>
