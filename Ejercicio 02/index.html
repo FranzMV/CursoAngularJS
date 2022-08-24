@@ -18,7 +18,7 @@
         <div class="container" ng-controller="profesorCtrl as profe"><!--Asociamos el controlador con un alias-->
             
             <h1>Profesor</h1>
-            <h4>{{ profe.profesor.nombre }}</h4>
+            <h4>{{ profesor.nombre }}</h4>
             <hr>
 
             <div class="row">
@@ -47,8 +47,8 @@
             </div>
             
             <hr>
-            <div class="row">
-                <div class="col-sm-11">
+            <div class="row" ng-show="mostrarCaja">
+                <div class="col-sm-9">
                     <section class="panel">
                         <div class="panel-body">
                             Nombre:

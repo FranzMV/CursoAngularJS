@@ -4,17 +4,21 @@ app.controller('profesorCtrl',function($scope){
     //Hacemos referencia al objeto para crear la propiedad del controlador referente al profesor
     $scope.profesor = profesorData;
     $scope.editando = {};
+    $scope.mostrarCaja = false;
 
     $scope.EditarProfesor = function(){
         angular.copy( $scope.profesor, $scope.editando);
+        $scope.mostrarCaja = true;
     }
 
     $scope.GuardarCambios = function(){
         angular.copy( $scope.editando, $scope.profesor );
+        $scope.mostrarCaja = false;
     }
 
     $scope.CancelarCambios = function(){
         $scope.editando = {};
+        $scope.mostrarCaja = false;
     }
 });
 
