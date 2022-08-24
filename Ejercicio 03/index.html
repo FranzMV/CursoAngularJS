@@ -15,6 +15,14 @@
         <script src="js/lib/angular.min.js"></script>
 
         <script src="js/app.js"></script>
+
+        <style>
+            .avatar{
+                width: 75px;
+                height: 75px;
+            }
+
+        </style>
         
     </head>    
     <body>
@@ -54,7 +62,41 @@
 
 
             {{ listadoProfesores | json}}
+            <br>
+            <br>
+            <br>
+            <hr>
+            <div class="row">
+                Busqueda:
+                <br>
+                <input type="text" ng-model="busqueda.nombre" class="form-control" placeholder="Ingrese nombre">
+                <br>
+                Sexo:
+                <select ng-model="busqueda.sexo" class="form-control">
+                    <option value="" >Cualquiera</option>
+                    <option value="mujer" >Mujer</option>
+                    <option value="hombre" >Hombre</option>
+                </select>
+            </div>
+            <br>
+            <hr>
+            <table class="table table-striped">
+                <tr>
+                    <th>Avatar</th>
+                    <th>Nombre</th>
+                    <th>Sexo</th>
+                    <th>Telefono</th>
+                    <th>Celular</th>
+                </tr>
 
+                <tr ng-repeat="persona in personas | filter:busqueda">
+                    <td><img ng-src="img/{{persona.avatar}}"  class="rounded-circle" alt="img"></td>
+                    <td>{{persona.nombre}}</td>
+                    <td>{{persona.sexo}}</td>
+                    <td>{{persona.telefono}}</td>
+                    <td>{{persona.celular}}</td>
+                </tr>
+            </table>
 
 
         </div><!-- fin del listadoCtrl -->
