@@ -15,7 +15,7 @@ app.factory('Personas', ['$http','$q', function($http, $q){
 
         var q = $q.defer();
 
-        $http.jsonp('http://www.json-generator.com/api/json/get/cgCoweSlRu?indent=2' , {jsonpCallbackParam: 'callback'})
+        $http.jsonp(url , {jsonpCallbackParam: 'callback'})
             .then(function success( data ){
                 console.log('Todo bien');
                 console.log(data);
