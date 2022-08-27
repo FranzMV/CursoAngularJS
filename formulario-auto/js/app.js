@@ -1,5 +1,5 @@
 
-var app = angular.module('bonusApp',[ ]);
+var app = angular.module('bonusApp',['jcs-autovalidate' ]);
 
 app.controller('mainCtrl', ['$scope', function($scope){
 
